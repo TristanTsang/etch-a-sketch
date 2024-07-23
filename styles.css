@@ -6,7 +6,6 @@
 .etch-a-sketch-container {
   width: 970px;
   height: 970px;
-  padding: 5px;
   border: black solid 15px;
   display: flex;
   flex-direction: column;
@@ -16,4 +15,20 @@
 .etch-a-sketch-row {
   display: flex;
   justify-content: space-around;
+}
+.button-row {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  flex: 1;
+  height: 33px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
