@@ -21,12 +21,17 @@ function pixel() {
     "style",
     "height: " + divSize + "px; width:" + divSize + "px;"
   );
+  pixel.addEventListener("mouseover", (e) => {
+    e.target.style.background = "black";
+  });
   return pixel;
 }
 
-function start(num) {
+function start() {
+  divSize = WIDTH / numRows - GAP_SIZE;
   for (let i = 0; i < num; i++) {
     container.appendChild(row());
   }
 }
-start(numRows);
+
+start(16);
