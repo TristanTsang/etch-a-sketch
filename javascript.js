@@ -1,8 +1,12 @@
 const WIDTH = 960;
 let numRows = 16; // # of squares per side
-const GAP_SIZE = 5;
+const GAP_SIZE = 2.5;
 let divSize = WIDTH / numRows - GAP_SIZE;
 const container = document.querySelector(".etch-a-sketch-container");
+const resetButton = document.querySelector(".reset");
+const changePixelCountButton = document.querySelector(".pixel-count");
+resetButton.addEventListener("click", () => start());
+changePixelCountButton.addEventListener("click", () => changePixelCount());
 
 function row() {
   const row = document.createElement("div");
@@ -28,10 +32,18 @@ function pixel() {
 }
 
 function start() {
+  container.innerHTML = "";
   divSize = WIDTH / numRows - GAP_SIZE;
-  for (let i = 0; i < num; i++) {
+  for (let i = 0; i < numRows; i++) {
     container.appendChild(row());
   }
 }
 
-start(16);
+function changePixelCount() {
+  let n = prompt("Enter pixel count per side (max 100)");
+  if (n > 100) n = 100;
+  numRows = n;
+  start();
+}
+
+start();
