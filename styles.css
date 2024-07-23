@@ -1,0 +1,19 @@
+/* style class for etch a sketch drawable pixels */
+.pixel {
+  border: black solid 1px;
+}
+
+.etch-a-sketch-container {
+  width: 970px;
+  height: 970px;
+  padding: 5px;
+  border: black solid 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.etch-a-sketch-row {
+  display: flex;
+  justify-content: space-around;
+}
